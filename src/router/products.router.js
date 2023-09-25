@@ -8,9 +8,5 @@ router.get("/home", getProductsCatalog);
 
 router.get("/admin", isAdmin, getProductsAdmin);
 
-router.post('/admin', addProduct);
-
-
-
 
 export default router;

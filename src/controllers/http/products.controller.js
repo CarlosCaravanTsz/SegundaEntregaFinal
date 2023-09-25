@@ -1,4 +1,4 @@
-import { productService } from "../services/index.js";
+import { productService } from "../../services/index.js";
 
 export const isAdmin = (req, res, next) => {
     req?.session?.user?.role === "admin"

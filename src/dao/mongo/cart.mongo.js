@@ -1,4 +1,4 @@
-import CartsModel from "./models/cart.mongo.model.js";
+import CartsModel from "./models/cart.model.js";
 
 export default class Cart {
     createCart = async (newCart) => { return await CartsModel.create(newCart); };

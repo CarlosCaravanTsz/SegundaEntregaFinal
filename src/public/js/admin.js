@@ -32,7 +32,7 @@ myForm.onsubmit = (e) => {
     operation: "add",
   };
   console.log('PRODUCTO RECIEN CREADO', product);
-  
+
   socket.emit("operation", product);
 };
 

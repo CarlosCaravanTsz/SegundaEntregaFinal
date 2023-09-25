@@ -3,15 +3,15 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export default {
-    PERSISTANCE: process.env.PERSISTENCE,
-    PORT: process.env.PORT || 8080,
-    DB_URL:
+    persistence: process.env.PERSISTENCE || 'MONGO',
+    port: process.env.PORT || 8080,
+    db_url:
         process.env.dbUrl ||
         "mongodb+srv://carloscara28:DnERG59KflAo9jen@carlosbackenddb.44mn6xw.mongodb.net/?retryWrites=true&w=majority",
-    DB_NAME: process.env.dbName || 'ecommerce',
-    PRIVATE_KEY: process.env.PRIVATE_KEY || 'SecretForJWTCoderhouse',
-    COOKIE_TOKEN: process.env.COOKIE_TOKEN || 'jwtToken',
-    SESSION_SECRET: process.env.SESSION_SECRET || 'secretSessionKey',
+    db_name: process.env.dbName || 'ecommerce',
+    private_key: process.env.PRIVATE_KEY || 'SecretForJWTCoderhouse',
+    cookie_token: process.env.COOKIE_TOKEN || 'jwtToken',
+    session_secret: process.env.SESSION_SECRET || 'secretSessionKey',
 
 };
 

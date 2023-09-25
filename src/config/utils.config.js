@@ -16,7 +16,7 @@ export const isValidPassword = (user, password) => {
 
 // Generamos el token
 export const generateToken = (user) => {
-    const token = jwt.sign( {user}, config.PRIVATE_KEY, {expiresIn: '24h'})
+    const token = jwt.sign( {user}, config.private_key, {expiresIn: '24h'})
     return token
 }
 
@@ -26,7 +26,7 @@ export const authToken = (req, res, next) => {
 
     if (!token) return res.status(401).send({ error: 'No authentication' });
 
-    jwt.verify(token, config.PRIVATE_KEY, (error, credentials) => {
+    jwt.verify(token, config.private_key, (error, credentials) => {
         if (error) return res.status(403).send({ error: 'Not authroized' })
 
         req.user = credentials.user

@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 
 const userCollection = "users";
 
-const UsersModel = new mongoose.model('users', new mongoose.Schema({
-    name: String,
+const UsersModel = new mongoose.model(userCollection, new mongoose.Schema({
+    username: String,
     email: {
         type: String,
         required: true,
@@ -18,7 +18,7 @@ const UsersModel = new mongoose.model('users', new mongoose.Schema({
         type: String,
         required: true,
     },
-    cartId: mongoose.Types.ObjectId
+    cartId: Number//mongoose.Types.ObjectId
 }));
 
 export default UsersModel;

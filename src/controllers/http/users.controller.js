@@ -1,4 +1,4 @@
-import { userService } from "../services/index.js";
+import { userService } from "../../services/index.js";
 
 export const isAdmin = async (req, res, next) => {
     req?.session?.user?.role === "admin"
@@ -24,12 +24,15 @@ export const logOut = async (req, res) => {
 export const userLogIn = async (req, res) => {
     if (!req.user) return res.status(400).send('Invalid Credentials')
     req.session.user = req.user
-    res.cookie("JWTCookie", req.user.token).redirect("/home");
+    return res.cookie("JWTCookie", req.user.token, {
+        maxAge: 60 * 60 * 1000,
+        httpOnly: true
+    }).redirect("/home");
 
-    return res.redirect('/profile')
+    //return res.redirect('/profile')
 };
 
-export const redirectLogin = async (req, res) => { res.redirect("/login"); };
+export const redirectLogin = async (req, res) => { res.redirect("/"); };
 
 export const emptyFunction = async (req, res) => { };
 
